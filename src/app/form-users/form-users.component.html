@@ -1,0 +1,119 @@
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+<form [formGroup]="formUser" (ngSubmit)="onSubmit()">
+  <div formGroupName="infoUsuario">
+    <div class="grid-name">
+      <div class="grid-item">
+        <div class="input-container">
+          <label class="input-label">Nombre*</label>
+          <input type="text" class="style-input" placeholder="Nombre" formControlName="nombre">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="nombre" groupName="infoUsuario"></app-error-message>
+      </div>
+      <div class="grid-item">
+        <div class="input-container">
+          <label class="input-label">Primer Apellido*</label>
+          <input class="style-input" placeholder="Primer Apellido" formControlName="primerApellido">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="primerApellido"
+          groupName="infoUsuario"></app-error-message>
+      </div>
+      <div class="grid-item">
+        <div class="input-container">
+          <label class="input-label">Segundo Apellido*</label>
+          <input class="style-input" placeholder="Segundo Apellido" formControlName="segundoApellido">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="segundoApellido"
+          groupName="infoUsuario"></app-error-message>
+      </div>
+    </div>
+    <div class="grid-user">
+      <div class="grid-item">
+        <div class="input-container">
+          <label class="input-label">CURP*</label>
+          <input class="style-input" placeholder="CURP" formControlName="curp" (input)="inputAlphanumeric($event)"
+            maxlength="18" minlength="18">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="curp" groupName="infoUsuario"></app-error-message>
+      </div>
+      <div class="grid-item">
+        <div class="input-container">
+          <label class="input-label">RFC (Con homoclave)*</label>
+          <input class="style-input" placeholder="RFC (Con homoclave)" formControlName="rfc"
+            (input)="inputAlphanumeric($event)" maxlength="13" minlength="13">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="rfc" groupName="infoUsuario"></app-error-message>
+      </div>
+    </div>
+  </div>
+  <div formGroupName="domicilio">
+
+    <div class="grid-address">
+
+      <div class="grid-item rowspan1">
+        <div class="input-container">
+          <label class="input-label">Código Postal*</label>
+          <input class="style-input" placeholder="Código Postal" formControlName="codigoPostal" maxlength="5"
+            minlength="5">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="codigoPostal" groupName="domicilio"></app-error-message>
+      </div>
+
+      <div class="grid-item rowspan3">
+        <div class="input-container">
+          <label class="input-label">Calle*</label>
+          <input class="style-input" placeholder="Calle" formControlName="calle">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="calle" groupName="domicilio"></app-error-message>
+      </div>
+
+      <div class="grid-item">
+        <div class="input-container">
+          <label class="input-label">Número exterior*</label>
+          <input class="style-input" placeholder="Número exterior" formControlName="numeroExterior" maxlength="5"
+            minlength="5">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="numeroExterior"
+          groupName="domicilio"></app-error-message>
+      </div>
+
+      <div class="grid-item">
+        <div class="input-container">
+          <label class="input-label">Número interior</label>
+          <input class="style-input" placeholder="Número interior" formControlName="numeroInterior"
+            (input)="inputAlphanumeric($event)" maxlength="10">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="numeroInterior"
+          groupName="domicilio"></app-error-message>
+      </div>
+
+      <div class="grid-item rowspan2">
+        <div class="input-container">
+          <label class="input-label">Estado*</label>
+          <input class="style-input" placeholder="Estado" formControlName="estado">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="estado" groupName="domicilio"></app-error-message>
+      </div>
+
+      <div class="grid-item rowspan2">
+        <div class="input-container">
+          <label class="input-label">Delegación/Municipio*</label>
+          <input class="style-input" placeholder="Delegación/Municipio" formControlName="municipio">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="municipio" groupName="domicilio"></app-error-message>
+      </div>
+
+      <div class="grid-item rowspan2">
+        <div class="input-container">
+          <label class="input-label">Colonia*</label>
+          <input class="style-input" placeholder="Colonia" formControlName="colonia">
+        </div>
+        <app-error-message [formGroup]="formUser" controlName="colonia" groupName="domicilio"></app-error-message>
+      </div>
+    </div>
+  </div>
+
+  <div class="center">
+    <button mat-flat-button color="primary-color">Guardar</button>
+  </div>
+
+</form>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "examen-mifel": {
+    "examen": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/examen-mifel",
+            "outputPath": "dist/examen",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,6 +27,7 @@
               }
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -59,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "examen-mifel:build:production"
+              "buildTarget": "examen:build:production"
             },
             "development": {
-              "buildTarget": "examen-mifel:build:development"
+              "buildTarget": "examen:build:development"
             }
           },
           "defaultConfiguration": "development"

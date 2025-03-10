@@ -1,0 +1,18 @@
+<ng-container *ngIf="estatus; else error">
+  <div mat-dialog-content class="center">
+    <h1 mat-dialog-title>¡Exito!</h1>
+    <p>Campos validados correctamente.</p>
+    <mat-icon class="iconsize-100 success">check_circle</mat-icon>
+  </div>
+</ng-container>
+<ng-template #error>
+  <div mat-dialog-content #noContent class="center">
+    <h1 mat-dialog-title>¡Advertencia!</h1>
+    <p>Existen campos por validar.</p>
+    <mat-icon class="iconsize-100 warning">error</mat-icon>
+  </div>
+</ng-template>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onClose()">Aceptar</button>
+</div>

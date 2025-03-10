@@ -1,11 +1,15 @@
-body {
-    margin-top: 3rem;
-    margin: 5rem;
-}
-
 .center {
     display: grid;
     place-items: center;
     justify-content: center;
     align-items: center;
+}
+
+
+.success {
+    color: green;
+}
+
+.warning {
+    color: #f5d44e;
 }
